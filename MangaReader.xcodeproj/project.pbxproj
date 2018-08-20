@@ -12,9 +12,11 @@
 		61011CBE212B7C52007BC40B /* Manga_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61011CBC212B7C52007BC40B /* Manga_Reader.xcdatamodeld */; };
 		61011CC0212B7C53007BC40B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61011CBF212B7C53007BC40B /* Assets.xcassets */; };
 		61011CC3212B7C53007BC40B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61011CC1212B7C53007BC40B /* Main.storyboard */; };
+		9DF8B353E3E453AC9D80F5B8 /* Pods_MangaReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D95198F50D189D86CBED55A /* Pods_MangaReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D95198F50D189D86CBED55A /* Pods_MangaReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangaReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61011CB5212B7C52007BC40B /* MangaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61011CB8212B7C52007BC40B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61011CBA212B7C52007BC40B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,6 +25,8 @@
 		61011CC2212B7C53007BC40B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61011CC4212B7C53007BC40B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61011CC5212B7C53007BC40B /* Manga_Reader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Manga_Reader.entitlements; sourceTree = "<group>"; };
+		E7F4DB5D7A46F84CDF567E22 /* Pods-MangaReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MangaReader/Pods-MangaReader.debug.xcconfig"; sourceTree = "<group>"; };
+		E8D49434F67F74A5810B090B /* Pods-MangaReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-MangaReader/Pods-MangaReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +34,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF8B353E3E453AC9D80F5B8 /* Pods_MangaReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09D3BD372F675FDC3B6FC217 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7F4DB5D7A46F84CDF567E22 /* Pods-MangaReader.debug.xcconfig */,
+				E8D49434F67F74A5810B090B /* Pods-MangaReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		61011CAC212B7C52007BC40B = {
 			isa = PBXGroup;
 			children = (
 				61011CB7212B7C52007BC40B /* MangaReader */,
 				61011CB6212B7C52007BC40B /* Products */,
+				09D3BD372F675FDC3B6FC217 /* Pods */,
+				C8CC2EE5C4F20D4256161372 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +82,14 @@
 			path = MangaReader;
 			sourceTree = "<group>";
 		};
+		C8CC2EE5C4F20D4256161372 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D95198F50D189D86CBED55A /* Pods_MangaReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -73,9 +97,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61011CC8212B7C53007BC40B /* Build configuration list for PBXNativeTarget "MangaReader" */;
 			buildPhases = (
+				9E729B69FF445C9CFF52152A /* [CP] Check Pods Manifest.lock */,
 				61011CB1212B7C52007BC40B /* Sources */,
 				61011CB2212B7C52007BC40B /* Frameworks */,
 				61011CB3212B7C52007BC40B /* Resources */,
+				D5F0ED3BCDD0EAE04DAF87D0 /* [CP] Embed Pods Frameworks */,
+				24AC48E280E98545762BAFE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24AC48E280E98545762BAFE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MangaReader/Pods-MangaReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E729B69FF445C9CFF52152A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MangaReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5F0ED3BCDD0EAE04DAF87D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MangaReader/Pods-MangaReader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MangaReader/Pods-MangaReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		61011CB1212B7C52007BC40B /* Sources */ = {
@@ -271,12 +352,13 @@
 		};
 		61011CC9212B7C53007BC40B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7F4DB5D7A46F84CDF567E22 /* Pods-MangaReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MangaReader/Manga_Reader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8DH9CSDXAJ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MangaReader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -291,12 +373,13 @@
 		};
 		61011CCA212B7C53007BC40B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D49434F67F74A5810B090B /* Pods-MangaReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MangaReader/Manga_Reader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8DH9CSDXAJ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/MangaReader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
