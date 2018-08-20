@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		61011CB5212B7C52007BC40B /* Manga Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Manga Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61011CB5212B7C52007BC40B /* MangaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61011CB8212B7C52007BC40B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61011CBA212B7C52007BC40B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61011CBD212B7C52007BC40B /* Manga_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Manga_Reader.xcdatamodel; sourceTree = "<group>"; };
@@ -39,7 +39,7 @@
 		61011CAC212B7C52007BC40B = {
 			isa = PBXGroup;
 			children = (
-				61011CB7212B7C52007BC40B /* Manga Reader */,
+				61011CB7212B7C52007BC40B /* MangaReader */,
 				61011CB6212B7C52007BC40B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,12 +47,12 @@
 		61011CB6212B7C52007BC40B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				61011CB5212B7C52007BC40B /* Manga Reader.app */,
+				61011CB5212B7C52007BC40B /* MangaReader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		61011CB7212B7C52007BC40B /* Manga Reader */ = {
+		61011CB7212B7C52007BC40B /* MangaReader */ = {
 			isa = PBXGroup;
 			children = (
 				61011CB8212B7C52007BC40B /* AppDelegate.swift */,
@@ -63,15 +63,15 @@
 				61011CC5212B7C53007BC40B /* Manga_Reader.entitlements */,
 				61011CBC212B7C52007BC40B /* Manga_Reader.xcdatamodeld */,
 			);
-			path = "Manga Reader";
+			path = MangaReader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		61011CB4212B7C52007BC40B /* Manga Reader */ = {
+		61011CB4212B7C52007BC40B /* MangaReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61011CC8212B7C53007BC40B /* Build configuration list for PBXNativeTarget "Manga Reader" */;
+			buildConfigurationList = 61011CC8212B7C53007BC40B /* Build configuration list for PBXNativeTarget "MangaReader" */;
 			buildPhases = (
 				61011CB1212B7C52007BC40B /* Sources */,
 				61011CB2212B7C52007BC40B /* Frameworks */,
@@ -81,9 +81,9 @@
 			);
 			dependencies = (
 			);
-			name = "Manga Reader";
+			name = MangaReader;
 			productName = "Manga Reader";
-			productReference = 61011CB5212B7C52007BC40B /* Manga Reader.app */;
+			productReference = 61011CB5212B7C52007BC40B /* MangaReader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +101,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 61011CB0212B7C52007BC40B /* Build configuration list for PBXProject "Manga Reader" */;
+			buildConfigurationList = 61011CB0212B7C52007BC40B /* Build configuration list for PBXProject "MangaReader" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				61011CB4212B7C52007BC40B /* Manga Reader */,
+				61011CB4212B7C52007BC40B /* MangaReader */,
 			);
 		};
 /* End PBXProject section */
@@ -273,7 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Manga Reader/Manga_Reader.entitlements";
+				CODE_SIGN_ENTITLEMENTS = MangaReader/Manga_Reader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8DH9CSDXAJ;
@@ -292,7 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Manga Reader/Manga_Reader.entitlements";
+				CODE_SIGN_ENTITLEMENTS = MangaReader/Manga_Reader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8DH9CSDXAJ;
@@ -310,7 +310,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		61011CB0212B7C52007BC40B /* Build configuration list for PBXProject "Manga Reader" */ = {
+		61011CB0212B7C52007BC40B /* Build configuration list for PBXProject "MangaReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61011CC6212B7C53007BC40B /* Debug */,
@@ -319,7 +319,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61011CC8212B7C53007BC40B /* Build configuration list for PBXNativeTarget "Manga Reader" */ = {
+		61011CC8212B7C53007BC40B /* Build configuration list for PBXNativeTarget "MangaReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61011CC9212B7C53007BC40B /* Debug */,

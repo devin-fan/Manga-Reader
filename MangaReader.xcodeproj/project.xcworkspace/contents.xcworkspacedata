@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Manga Reader.xcodeproj">
+      location = "self:/Users/devinfan/private/Manga Reader/MangaReader.xcodeproj">
    </FileRef>
 </Workspace>
