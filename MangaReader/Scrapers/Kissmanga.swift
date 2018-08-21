@@ -12,7 +12,7 @@ import JavaScriptCore
 import WebKit
 import CoreData.NSManagedObject
 
-class Kissmanga: NSObject {
+class Kissmanga: Scraper {
     public func get(manga title: String) {
         if Kissmanga.logged_in {
             scrape(manga: title)
@@ -22,7 +22,7 @@ class Kissmanga: NSObject {
     }
         
         
-    private func scrape(manga title: String) {
+    internal func scrape(manga title: String) {
         self._manga = title
         let titleURL = "http://kissmanga.com/Manga/" + title.replacingOccurrences(of: " ", with: "-")
         Alamofire.request(titleURL).responseData { response in
@@ -145,7 +145,6 @@ class Kissmanga: NSObject {
         }
         
         let script = html[scriptRange]
-        print(script)
         guard let varDefRange = script.range(of: "(?<=var s,t,o,p,b,r,e,a,k,i,n,g,[a-zA-Z], ).*?(?=;)", options: .regularExpression) else {
             return nil
         }
@@ -166,26 +165,8 @@ class Kissmanga: NSObject {
             return nil
         }
         let action = script[actionRange]
-        print(action)
-        print(varName)
         let _ = context.evaluateScript(String(action))
-        
-        //        let varValDict1 = context.objectForKeyedSubscript(varName)
-        //        if varValDict1 != nil {
-        //            print(varValDict1!)
-        //            let varVal1 = varValDict1!.toDictionary()
-        //            if varVal1 != nil {
-        //                print(varVal1!)
-        //                let first = varVal1!.first
-        //                if first != nil {
-        //                    print(first!)
-        //                    let s = first!.key as? String
-        //                    if s != nil {
-        //                        print(s!)
-        //                    }
-        //                }
-        //            }
-        //        }
+     
         guard let varValDict = context.objectForKeyedSubscript(varName), let varVal = varValDict.toDictionary(), let hiddenVar = varVal.first else {
             return nil
         }
@@ -202,7 +183,6 @@ class Kissmanga: NSObject {
         
         let v = hiddenVar.value as! Double
         let i = Double(Int(v * 10000000000)) / 10000000000
-        print(i)
         paramaters["jschl_answer"] = i + 13
         return paramaters
     }
