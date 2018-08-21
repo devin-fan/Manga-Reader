@@ -49,7 +49,7 @@ enum ScraperType: String {
      Fetch images from chapter.
      
      - parameters:
-         - chapter: URL of chapter.
+         - chapter: Chapter id to be appened to url.
          - remove: Loading view controller.
          - callback: Called after images have been fetched.
          - imageSet: Set of images that have been loaded and should be displayed.
