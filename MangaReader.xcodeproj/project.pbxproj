@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4B8881212B882B008594EF /* Kissmanga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4B8880212B882B008594EF /* Kissmanga.swift */; };
 		61011CB9212B7C52007BC40B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61011CB8212B7C52007BC40B /* AppDelegate.swift */; };
 		61011CBB212B7C52007BC40B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61011CBA212B7C52007BC40B /* ViewController.swift */; };
 		61011CBE212B7C52007BC40B /* Manga_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61011CBC212B7C52007BC40B /* Manga_Reader.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		0D95198F50D189D86CBED55A /* Pods_MangaReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangaReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A4B8880212B882B008594EF /* Kissmanga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kissmanga.swift; sourceTree = "<group>"; };
 		61011CB5212B7C52007BC40B /* MangaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61011CB8212B7C52007BC40B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61011CBA212B7C52007BC40B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2A4B8886212B98BB008594EF /* Scrapers */ = {
+			isa = PBXGroup;
+			children = (
+				2A4B8880212B882B008594EF /* Kissmanga.swift */,
+			);
+			path = Scrapers;
+			sourceTree = "<group>";
+		};
 		61011CAC212B7C52007BC40B = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				61011CB8212B7C52007BC40B /* AppDelegate.swift */,
+				2A4B8886212B98BB008594EF /* Scrapers */,
 				61011CBA212B7C52007BC40B /* ViewController.swift */,
 				61011CBF212B7C53007BC40B /* Assets.xcassets */,
 				61011CC1212B7C53007BC40B /* Main.storyboard */,
@@ -217,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4B8881212B882B008594EF /* Kissmanga.swift in Sources */,
 				61011CBB212B7C52007BC40B /* ViewController.swift in Sources */,
 				61011CB9212B7C52007BC40B /* AppDelegate.swift in Sources */,
 				61011CBE212B7C52007BC40B /* Manga_Reader.xcdatamodeld in Sources */,
