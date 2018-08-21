@@ -43,7 +43,7 @@ class Bato: Scraper {
                 let title = String(firstResult[titleRange])
                 self._manga = title
                 print("Info \(id), \(title)")
-                let url = String(format: Bato.MANGA_URL, id)
+                let url = String(format: Bato.BATO_URL, id)
                 self.scrape(manga: url)
             } else {
                 NSLog("No chapter results")
@@ -109,77 +109,31 @@ class Bato: Scraper {
     }
     
     
-    func parse(chapter: String) -> [String]? {
-        let stripped = chapter.replacingOccurrences(of: "\n", with: "")
-        guard let selectorRange = stripped.range(of: "<select name=\"page_select\" id=\"page_select\".*?</select>", options: .regularExpression) else {
-            return nil
-        }
-        
-        let selector = String(stripped[selectorRange])
-        
-        let matches = Bato.SELECTOR_OPTION.matches(in: selector, options: [], range: NSMakeRange(0, selector.count))
-        
-        if matches.isEmpty {
-            return nil
-        }
-        
-        return matches.map { (match) -> String in
-            return String(selector[Range(match.range, in: selector)!])
-        }
-    }
-    
-    
-    func parseSingle(chapter: String) -> [String]? {
-        let stripped = chapter.replacingOccurrences(of: "\n", with: "")
-        guard let range = stripped.range(of: "<div .*?>( ?<img src=[\"\'].*?/><br ?/>)+", options: .regularExpression) else { return nil }
-        let div = String(stripped[range])
-        return nil
-//        let matches = BatoOperation.IMAGE_PATTERN.matches(in: div, options: [], range: NSMakeRange(0, div.count))
-//        guard !matches.isEmpty else { return nil }
-//
-//        var images = [String]()
-//        for match in matches {
-//            let image = String(div[Range(match.range, in: div)!])
-//            images.append(image)
-//        }
-//
-//        return images
-    }
-    
-    
     func fetch(chapter: String, remove: NSViewController, callback: @escaping (_ chapter: NSManagedObject) -> ()) {
-//        let group = DispatchGroup()
-//        group.enter()
-//        BatoOperation._group = group
-//        let params = BatoOperation.splitHTMLParam(url: chapter)
-//
-//        Alamofire.request(BatoOperation.IMAGE_URL, method: .get, parameters: params, encoding: URLEncoding.default, headers: BatoOperation.HEADERS).responseData { response in
-//            if let data = response.data, let chapter = String(data: data, encoding: .utf8) {
-//                if let images = self.parse(chapter: chapter) {
-//                BatoOperation._data = [String](repeating: "", count: images.count)
-//                for (ind, image) in images.enumerated() {
-//                    group.enter()
-//                    self.operationQueue.addOperation(BatoOperation(url: image, num: ind))
-//                    }
-//                } else if let images = self.parseSingle(chapter: chapter) {
-//                    BatoOperation._data = images
-//                }
-//            }
-//            group.leave()
-//        }
-    
-        
-//        group.notify(queue: .main) {
-//            if let chapterObj = DataManager.add(images: BatoOperation._data, to: chapter) {
-//                DispatchQueue.main.async {
-//                    callback(chapterObj)
-//                    remove.removeFromParentViewController()
-//                }
-//                BatoOperation._data = []
-//            }
-//            BatoOperation._group = nil
-//            print("Done: \(BatoOperation._data.count)")
-//        }
+        let chapterURL = String(format: Bato.BATO_URL, chapter)
+        NSLog("Fetch: \(chapterURL)")
+        Alamofire.request(chapterURL).responseData { response in
+            guard let data = response.data, let chapterText = String(data: data, encoding: .utf8) else {
+                NSLog("No chapter data")
+                return
+            }
+
+            let stripped = chapterText.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "\r", with: "")
+            guard let imagesRange = stripped.range(of: "(?<=var images =) +\\{[^\\}]+\\}", options: .regularExpression),
+                let imageJSON = String(stripped[imagesRange]).data(using: .utf8),
+                let imageObject = try? JSONSerialization.jsonObject(with: imageJSON, options: .mutableLeaves),
+                let imageInfo = imageObject as? [String: String] else {
+                    print("No images: \(stripped)")
+                    return
+            }
+            let keys = Array(imageInfo.keys).sorted(by: { (first, second) -> Bool in
+                return Int(first)! < Int(second)!
+            })
+            for key in keys {
+                print("Image \(key): \(imageInfo[key]!)")
+            }
+        }
+
     }
     
     
@@ -197,7 +151,6 @@ class Bato: Scraper {
         Alamofire.request(loginURL, method: .post, parameters: parameters, encoding: URLEncoding(destination: .httpBody), headers: nil).response { response in
             print("Logged in")
             Bato.logged_in = true
-//            debugPrint(response)
             self.find(manga: title)
         }
     }
@@ -230,7 +183,7 @@ class Bato: Scraper {
     
     static let TABLE_ROW = try! NSRegularExpression(pattern: "<div.*?</div>")
     static let SELECTOR_OPTION = try! NSRegularExpression(pattern: "(?<=<option value=\").*?(?=\")")
-    static let MANGA_URL = "https://bato.to%@"
+    static let BATO_URL = "https://bato.to%@"
     static let SEARCH_URL = "https://bato.to/search"
     static let HEADERS: HTTPHeaders = [
         "referer": "https://bato.to",
